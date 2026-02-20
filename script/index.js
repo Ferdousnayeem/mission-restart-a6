@@ -8,7 +8,7 @@ const loadTopRatedProducts = () => {
 const displayTopRatedProducts = (products) => {
 
     // console.log(products);
-    const topRatedProducts = products.filter(product => product.rating && product.rating.rate >= 3)
+    const topRatedProducts = products.filter(product => product.rating && product.rating.rate > 4)
     // console.log(topRatedProducts);
     const firstThreeProducts = topRatedProducts.slice(0, 3)
     console.log(firstThreeProducts);
@@ -17,6 +17,8 @@ const displayTopRatedProducts = (products) => {
     topRatedContainer.innerHTML = ""
 
     firstThreeProducts.forEach(product => {
+
+      // console.log(product.rating.rate);
       const createTopRatedProducts = document.createElement('div')
       
       createTopRatedProducts.innerHTML = `
